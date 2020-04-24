@@ -1,0 +1,6 @@
+*.iml
+*.idea
+.deploy
+target
+dqs-deploy.sh
+.DS_Store
