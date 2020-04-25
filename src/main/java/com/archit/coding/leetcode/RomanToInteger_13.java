@@ -24,37 +24,47 @@ C can be placed before D (500) and M (1000) to make 400 and 900.
   }
   private static class Solution {
     public int romanToInt(String s) {
-      int result = 0;
-      Map<String, Integer> hash = new HashMap<>();
-      hash.put("I", 1);
-      hash.put("V", 5);
-      hash.put("X", 10);
-      hash.put("L", 50);
-      hash.put("C", 100);
-      hash.put("D", 500);
-      hash.put("M", 1000);
-      hash.put("IV", 4);
-      hash.put("IX", 9);
-      hash.put("XL", 40);
-      hash.put("XC", 90);
-      hash.put("CD", 400);
-      hash.put("CM", 900);
+      Map<Character, Integer> hash = new HashMap<>();
+      hash.put('I', 1);
+      hash.put('V', 5);
+      hash.put('X', 10);
+      hash.put('L', 50);
+      hash.put('C', 100);
+      hash.put('D', 500);
+      hash.put('M', 1000);
 
       int length = s.length();
-      for(int i = 0; i < length; i++ ) {
-        char current = s.charAt(i);
-        String value = Character.toString(current);
-        if (i < length -1) {
-          value += Character.toString(s.charAt(i+1));
-        }
+      if (length < 1) {
+        return 0;
+      }
+      int result = hash.get(s.charAt(0));
+      for(int i = 1; i < length; i++ ) {
+        result += hash.get(s.charAt(i)); //add the value first
+        char current = s.charAt(i); // get current character
+        char previous = s.charAt(i-1); //get previous character
 
-        if(!hash.containsKey(value)) {
-          value = Character.toString(current);
-        } else {
-          i++;
+        //check for exceptional case in previous + current combinations
+        switch (current) {
+          case 'V':
+          case 'X':
+            if (previous == 'I') {
+              result-= (2*hash.get(previous));
+            }
+            break;
+          case 'L':
+          case 'C':
+            if (previous =='X') {
+              result-= (2*hash.get(previous));
+            }
+            break;
+          case 'D':
+          case 'M':
+            if (previous == 'C') {
+              result-= (2*hash.get(previous));
+            }
+            break;
+          default: break;
         }
-
-        result += hash.get(value);
       }
       return result;
     }
