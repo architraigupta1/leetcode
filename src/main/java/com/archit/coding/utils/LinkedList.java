@@ -73,4 +73,39 @@ public class LinkedList {
       // prev is now head of input list
       return prev;
     }
+
+  public Node reverseBlockOfKIterative(Node head, int k) {
+    Node cur = head;
+
+    Node newHead = head;
+    if (hasKNodes(head, k-1)) {
+      newHead = getKPlusOneNode(head, k-1);
+    }
+    Node oldTail = null;
+    while (cur != null && hasKNodes(cur, k)) {
+      int count = 0;
+      Node prev = getKPlusOneNode(cur, k);
+      Node next = null;
+      Node newTail = cur;
+
+      //reverse k nodes of LL using regular LL reversing algo.
+      while (count < k) {
+        next = cur.next;
+        cur.next = prev;
+        prev = cur;
+        cur = next;
+        count++;
+      }
+
+      //prev here is pointing to the head of reversed list
+      //connect it to the tail of last reversed list
+      if (oldTail != null) {
+        oldTail.next = prev;
+      }
+      //update the tail to the most recently reversed list's tail
+      oldTail = newTail;
+    }
+
+    return newHead;
   }
+}
