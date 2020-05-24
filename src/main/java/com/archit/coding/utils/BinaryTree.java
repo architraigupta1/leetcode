@@ -61,4 +61,26 @@ public class BinaryTree {
       }
     }
   }
+
+  public void printAllPathsFromRootToLeaf(TreeNode<Integer> root, int[] path, int pathlen) {
+    if (root == null) {
+      return;
+    }
+    path[pathlen] = root.data;
+    pathlen++;
+
+    if (root.left == null && root.right == null) {
+      printPath(path, pathlen);
+    } else {
+      printAllPathsFromRootToLeaf(root.left, path, pathlen);
+      printAllPathsFromRootToLeaf(root.right, path, pathlen);
+    }
+  }
+
+  private void printPath(int[] path, int pathlen) {
+    for (int i = 0; i < pathlen; i++) {
+      System.out.print(path[i] + " ");
+    }
+    System.out.println();
+  }
 }

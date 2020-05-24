@@ -10,5 +10,8 @@ public class BinaryTreeTraversals {
     binaryTree.preOrder(root);
     System.out.println();
     binaryTree.postOrderIterative(root);
+    System.out.println();
+    int[] a = new int[10];
+    binaryTree.printAllPathsFromRootToLeaf(root, a, 0);
   }
 }
