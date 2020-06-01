@@ -35,4 +35,11 @@ public class ArrayUtil {
     a[i] = a[j];
     a[j] = temp;
   }
+
+  public static void printCharArray(char[] perm) {
+    for (int i = 0; i < perm.length; i++) {
+      System.out.print(perm[i]);
+    }
+    System.out.println();
+  }
 }

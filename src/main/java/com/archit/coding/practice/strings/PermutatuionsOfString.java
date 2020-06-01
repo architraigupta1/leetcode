@@ -1,5 +1,7 @@
 package com.archit.coding.practice.strings;
 
+import com.archit.coding.utils.ArrayUtil;
+
 /**
  * All chars must be used
  * One char must be used at only one position
@@ -16,7 +18,7 @@ public class PermutatuionsOfString {
 
   private static void printPermutations(char[] original, boolean[] usedChars, char[] permutation, int index, int length) {
     if (index == length) {
-      print(permutation);
+      ArrayUtil.printCharArray(permutation);
       return;
     }
 
@@ -30,10 +32,5 @@ public class PermutatuionsOfString {
     }
   }
 
-  private static void print(char[] perm) {
-    for (int i = 0; i < perm.length; i++) {
-      System.out.print(perm[i]);
-    }
-    System.out.println();
-  }
+
 }

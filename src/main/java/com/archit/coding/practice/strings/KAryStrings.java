@@ -1,4 +1,6 @@
-package com.archit.coding.practice;
+package com.archit.coding.practice.strings;
+
+import com.archit.coding.utils.ArrayUtil;
 
 public class KAryStrings {
   public static void main(String[] args) {
@@ -11,7 +13,7 @@ public class KAryStrings {
 
   public void printKAryOfSizeN(int[] a, int n, int k) {
     if (n < 1) {
-      print(a);
+      ArrayUtil.printArray(a);
     } else {
       for (int i = 0; i < k; i++) {
         a[n-1] = i;
@@ -22,19 +24,12 @@ public class KAryStrings {
 
   public void printKAryOfSizeNV2(int[] a, int n, int k, int index) {
     if (index == n) {
-      print(a);
+      ArrayUtil.printArray(a);
       return;
     }
     for (int i = 0; i < k; i++) {
       a[index] = i;
       printKAryOfSizeNV2(a, n, k, index+1);
     }
-  }
-
-  public void print(int[] a) {
-    for (int value : a) {
-      System.out.print(value);
-    }
-    System.out.println();
   }
 }
