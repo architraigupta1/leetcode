@@ -1,4 +1,4 @@
-package com.archit.coding.practice;
+package com.archit.coding.practice.linkedlist;
 
 import com.archit.coding.utils.Node;
 

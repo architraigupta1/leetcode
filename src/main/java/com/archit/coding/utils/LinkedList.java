@@ -2,6 +2,22 @@ package com.archit.coding.utils;
 
 public class LinkedList {
 
+  public Node<Integer> add(int data) {
+    Node head = new Node(data);
+    return head;
+  }
+
+  public Node<Integer> add(Node head, int data) {
+    if (head == null) {
+      return this.add(data);
+    }
+
+    Node node = new Node(data);
+    node.next = head;
+    head = node;
+    return head;
+  }
+
   public Node<Integer> createDummyLinkedList(int size) {
 
     Node<Integer> head = new Node<>(1);
