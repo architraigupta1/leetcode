@@ -14,7 +14,6 @@ public class RemoveDuplicatesFromSortedLL {
     linkedList.add(5);
 
     linkedList.forEach(i -> System.out.print(i + " "));
-    System.out.println();
     RemoveDuplicatesFromSortedLL rm = new RemoveDuplicatesFromSortedLL();
     rm.removeDuplicates(linkedList, 0);
     linkedList.forEach(i -> System.out.print(i + " "));
