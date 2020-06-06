@@ -1,4 +1,4 @@
-package com.archit.coding.practice;
+package com.archit.coding.practice.tree;
 
 import com.archit.coding.utils.BinaryTree;
 import com.archit.coding.utils.TreeNode;
