@@ -24,6 +24,23 @@ public class BinaryTree {
     return root;
   }
 
+  public TreeNode createDummyBinaryTreeWithNegativeNodes() {
+    TreeNode<Integer> root = new TreeNode<>(-15);
+    root.left = new TreeNode(5);
+    root.right = new TreeNode(6);
+    root.left.left = new TreeNode(-8);
+    root.left.right = new TreeNode(1);
+    root.left.left.left = new TreeNode(2);
+    root.left.left.right = new TreeNode(6);
+    root.right.left = new TreeNode(3);
+    root.right.right = new TreeNode(9);
+    root.right.right.right = new TreeNode(0);
+    root.right.right.right.left = new TreeNode(4);
+    root.right.right.right.right = new TreeNode(-1);
+    root.right.right.right.right.left = new TreeNode(10);
+    return root;
+  }
+
   public void preOrder(TreeNode root) {
     if (root != null) {
       System.out.print(root.data + " ");

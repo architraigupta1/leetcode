@@ -1,4 +1,4 @@
-package com.archit.coding.practice;
+package com.archit.coding.practice.array;
 
 public class KadanesLargestSumContiguousSubArray {
   public static void main(String[] args) {
