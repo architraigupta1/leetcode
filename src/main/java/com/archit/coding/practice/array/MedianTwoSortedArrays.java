@@ -2,11 +2,12 @@ package com.archit.coding.practice.array;
 
 public class MedianTwoSortedArrays {
   public static void main(String[] args) {
-    int ar1[] = { 1, 2, 3, 6 };
-    int ar2[] = { 4, 6, 8, 10 };
-//    System.out.println("Median of two sorted arrays : " + medianOfTwoArrays(ar1, 0, ar1.length -1, ar2, 0, ar2.length-1));
+    int ar1[] = { 1, 2, 3, 9 };
+    int ar2[] = { 5, 6, 8, 10 };
     System.out.println("Median of two sorted arrays : " +
-        getMedian(ar1, ar1, 0, 0, ar1.length -1, ar2.length-1));
+        medianOfTwoArrays(ar1, 0, ar1.length -1, ar2, 0, ar2.length-1));
+//    System.out.println("Median of two sorted arrays 2: " +
+//        getMedian(ar1, ar1, 0, 0, ar1.length -1, ar2.length-1));
   }
 
   static int median(
@@ -28,6 +29,8 @@ public class MedianTwoSortedArrays {
       int[] a, int[] b, int startA,
       int startB, int endA, int endB)
   {
+    //since equal sized arrays, so checking the size of any one is fine.
+    //Base case where each array has only 2 elements
     if (endA - startA == 1) {
       return (
           Math.max(a[startA],
@@ -72,9 +75,8 @@ public class MedianTwoSortedArrays {
 
   private static int medianOfTwoArrays(int[] ar1, int l1, int r1, int[] ar2, int l2, int r2) {
     int size1 = r1 - l1 + 1;
-    int size2 = r2 - l2 + 1;
     if (size1 == 2) {
-      return (Math.max(ar1[l1], ar2[l2]) + Math.max(ar1[r1], ar2[r2])) / 2;
+      return (Math.max(ar1[l1], ar2[l2]) + Math.min(ar1[r1], ar2[r2])) / 2;
     }
 
     int m1 = median(ar1, l1, r1);

@@ -30,7 +30,7 @@ public class QuickSelectKthSmallestElement {
 
   private static int randomPartition(int[] a, int left, int right) {
    int index = getRandomIndex(left, right);
-    ArrayUtil.swap(a, left, index);
+    ArrayUtil.swap(a, left, left + index);
 
     int pivot = a[left];
     int i = left;
