@@ -20,7 +20,7 @@ public class MergeKLinkedLists {
   /**
    * This is the main function which pairs up lists (first,last) and stores the merged list in first.
    * It keeps on doing so until only one list remains.
-   * 
+   *
    * @param heads lists to merge
    * @param numberOfLists
    * @return head of merged list
