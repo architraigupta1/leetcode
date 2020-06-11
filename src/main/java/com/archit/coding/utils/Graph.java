@@ -1,5 +1,6 @@
 package com.archit.coding.utils;
 
+import java.util.Iterator;
 import java.util.LinkedList;
 
 public class Graph {
@@ -53,5 +54,36 @@ public class Graph {
         dfs(vertex, visited);
       }
     });
+  }
+
+  public boolean hasCycle() {
+    int[] color = new int[this.vertices];
+    boolean cycle = false;
+    for (int i = 0; i < this.vertices; i++) {
+      if (color[i] == 0) {
+        cycle = checkCycle(i, color);
+        if (cycle) {
+          break;
+        }
+      }
+    }
+    return cycle;
+  }
+
+  private boolean checkCycle(int node, int[] color) {
+    if (color[node] == 1) {
+      return true;
+    }
+    color[node] = 1;
+    Iterator<Integer> it = this.adj[node].iterator();
+    boolean cycle = false;
+    while (it.hasNext()) {
+      cycle = checkCycle(it.next(), color);
+      if (cycle) {
+        break;
+      }
+    }
+    color[node] = 2;
+    return cycle;
   }
 }
