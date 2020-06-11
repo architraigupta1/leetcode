@@ -1,7 +1,9 @@
 package com.archit.coding.utils;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.LinkedList;
+import java.util.Queue;
 
 public class Graph {
 
@@ -85,5 +87,39 @@ public class Graph {
     }
     color[node] = 2;
     return cycle;
+  }
+
+  public ArrayList<Integer> topologicalSort() {
+    int[] indegree = new int[this.vertices];
+    ArrayList<Integer> topologicalOrder = new ArrayList();
+
+    for (int i = 0; i < this.vertices; i++) {
+      Iterator<Integer> it = this.adj[i].iterator();
+      while(it.hasNext()) {
+        indegree[it.next()]++;
+      }
+    }
+
+    Queue<Integer> queue = new LinkedList();
+    for (int i = 0; i < this.vertices; i++) {
+      if (indegree[i] == 0) {
+        queue.add(i);
+      }
+    }
+
+    while(!queue.isEmpty()) {
+      int node = queue.poll();
+      topologicalOrder.add(node);
+      System.out.print(node + " ");
+      Iterator<Integer> it = this.adj[node].iterator();
+      while (it.hasNext()) {
+        int adjacentNode = it.next();
+        indegree[adjacentNode]--;
+        if (indegree[adjacentNode] == 0) {
+          queue.add(adjacentNode);
+        }
+      }
+    }
+    return topologicalOrder;
   }
 }
