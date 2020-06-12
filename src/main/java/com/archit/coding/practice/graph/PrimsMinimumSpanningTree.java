@@ -42,13 +42,8 @@ public class PrimsMinimumSpanningTree {
 
   private void printMst(int source) {
     for (int i = 1; i < this.vertices; i++) {
-      System.out.println(i + " " + parent[i]);
+      System.out.println("Edge " + i + "-->" + parent[i] + " with distance " + dist[i]);
     }
-//    for (int i = 0; i < this.vertices; i++) {
-//      System.out.print("Cost of path from source " + source + " to " + i + " is " + dist[i] + " Path is ");
-//      print(i);
-//      System.out.println();
-//    }
   }
 
   private void print(int i) {
