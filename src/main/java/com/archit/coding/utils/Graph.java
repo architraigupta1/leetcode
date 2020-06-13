@@ -122,4 +122,38 @@ public class Graph {
     }
     return topologicalOrder;
   }
+
+  public void findCycle() {
+    Queue<Integer> q = new LinkedList<>();
+    boolean[] visited = new boolean[this.vertices];
+    int[] degree = new int[this.vertices];
+    for (int i = 0; i < this.vertices; i++) {
+      degree[i] = this.adj[i].size();
+      if (degree[i] == 1) {
+        q.add(i);
+      }
+    }
+
+    while (!q.isEmpty()) {
+      Integer node = q.poll();
+      visited[node] = true;
+      Iterator<Integer> it = this.adj[node].iterator();
+      while (it.hasNext()) {
+        Integer next = it.next();
+        degree[next]--;
+        if (degree[next] == 1) {
+          q.add(next);
+        }
+      }
+    }
+    printCycle(visited);
+  }
+
+  private void printCycle(boolean[] visited) {
+    for (int i = 0; i < this.vertices; i++) {
+      if (!visited[i]) {
+        System.out.print(i + " ");
+      }
+    }
+  }
 }
