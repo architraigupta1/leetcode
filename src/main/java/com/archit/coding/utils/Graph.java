@@ -7,8 +7,8 @@ import java.util.Queue;
 
 public class Graph {
 
-  int vertices;
-  java.util.LinkedList<Integer>[] adj;
+  public int vertices;
+  public java.util.LinkedList<Integer>[] adj;
 
   public Graph(int vertices) {
     this.vertices = vertices;
