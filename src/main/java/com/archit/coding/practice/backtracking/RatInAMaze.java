@@ -39,7 +39,7 @@ public class RatInAMaze {
     if (row == rows-1 && col == cols-1) {
       return true;
     }
-    
+
     for (int i = 0; i < 2; i++) {
       int nextRow = row + rowNums[i];
       int nextCol = col + colNums[i];
