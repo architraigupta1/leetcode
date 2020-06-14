@@ -1,5 +1,6 @@
-package com.archit.coding.practice;
+package com.archit.coding.practice.backtracking;
 
+//Complexity 8^(n^2) where n is boardsize
 public class KnightsTour {
   public static void main(String[] args) {
     int boardSize = 8;
