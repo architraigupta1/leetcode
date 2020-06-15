@@ -5,7 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WordBoggle {
-  static String dictionary[] = {"GEEKS", "FOR", "QUIZ", "GEE", "GEES"};
+  static String dictionary[] = {"GEEKS", "FOR", "QUIZ", "GEE", "GEES", "GES"};
   static Map<String, Boolean> map = new HashMap();
   public static void main(String[] args) {
 
@@ -48,8 +48,9 @@ public class WordBoggle {
 
       if (isSafe(nextRow, nextCol, visited) && root.child[boggle[nextRow][nextCol] - 'A'] != null) {
         visited[nextRow][nextCol] = true;
-        s += boggle[nextRow][nextCol];
-        searchWord(root.child[boggle[nextRow][nextCol] - 'A'], boggle, visited, s, nextRow, nextCol);
+        String str = new String(s);
+        str += boggle[nextRow][nextCol];
+        searchWord(root.child[boggle[nextRow][nextCol] - 'A'], boggle, visited, str, nextRow, nextCol);
         visited[nextRow][nextCol] = false;
       }
     }
