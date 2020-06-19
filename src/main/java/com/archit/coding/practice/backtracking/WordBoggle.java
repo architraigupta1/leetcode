@@ -5,17 +5,17 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class WordBoggle {
-  static String dictionary[] = {"GEEKS", "FOR", "QUIZ", "GEE", "GEES", "GES"};
+  static String[] dictionary = {"GEEKS", "FOR", "QUIZ", "GEE", "GEES", "GES"};
   static Map<String, Boolean> map = new HashMap();
   public static void main(String[] args) {
 
-    char boggle[][] = {
+    char[][] boggle = {
         {'G','I','Z'},
         {'U','E','K'},
         {'Q','S','E'}
     };
 
-    boolean visited[][] = new boolean [boggle.length][boggle[0].length];
+    boolean[][] visited = new boolean [boggle.length][boggle[0].length];
     WordBoggle wordBoggle = new WordBoggle();
     Trie trie = wordBoggle.createTrieFromDict(dictionary);
     for (int i = 0; i < boggle.length; i++) {
@@ -48,7 +48,7 @@ public class WordBoggle {
 
       if (isSafe(nextRow, nextCol, visited) && root.child[boggle[nextRow][nextCol] - 'A'] != null) {
         visited[nextRow][nextCol] = true;
-        String str = new String(s);
+        String str = s;
         str += boggle[nextRow][nextCol];
         searchWord(root.child[boggle[nextRow][nextCol] - 'A'], boggle, visited, str, nextRow, nextCol);
         visited[nextRow][nextCol] = false;
@@ -103,9 +103,8 @@ public class WordBoggle {
       this.isWord = false;
     }
     public TrieNode(char data) {
+      this();
       this.data = data;
-      this.child = new TrieNode[26];
-      this.isWord = false;
     }
   }
 }

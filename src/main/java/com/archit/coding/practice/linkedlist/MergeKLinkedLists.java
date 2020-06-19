@@ -12,7 +12,7 @@ public class MergeKLinkedLists {
     for (int i = 0; i < k; i++) {
       heads[i] = linkedList.createDummyLinkedList(n);
     }
-
+    heads = new Node[5];
     Node<Integer> mergedHead = mergeKLinkedList(heads, k);
     linkedList.print(mergedHead);
   }
@@ -33,7 +33,7 @@ public class MergeKLinkedLists {
       int j = last;
 
       while (i < j) {
-        heads[i] = merge(heads[i], heads[j]);
+        heads[i] = mergeB(heads[i], heads[j]);
         i++;
         j--;
 
@@ -62,5 +62,50 @@ public class MergeKLinkedLists {
       b.next = merge(a, b.next);
       return b;
     }
+  }
+
+  public static Node<Integer> mergeB(Node<Integer> a, Node<Integer> b) {
+    if (a == null) {
+      return b;
+    }
+    if (b == null) {
+      return a;
+    }
+    Node head = null;
+    if (a.data <= b.data) {
+      head = a;
+      a=a.next;
+    } else {
+      head = b;
+      b = b.next;
+    }
+
+    Node temp = head;
+    while(a!=null && b!=null) {
+      if(a.data>= b.data) {
+        temp.next = a;
+        temp = temp.next;
+        a = a.next;
+      } else {
+        temp.next = b;
+        temp = temp.next;
+        b = b.next;
+      }
+    }
+
+    while(a != null) {
+      temp.next = a;
+      temp = temp.next;
+      a = a.next;
+    }
+
+    while(b != null) {
+      temp.next = b;
+      temp = temp.next;
+      b = b.next;
+    }
+
+
+    return head;
   }
 }
