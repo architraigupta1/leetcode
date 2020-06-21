@@ -17,10 +17,14 @@ public class KClosestPointsToOrigin_973 {
     public int[][] kClosest(int[][] points, int k) {
       PriorityQueue<Node> pq = new PriorityQueue<>(k, (a, b) ->
 
+
+
         b.total < a.total ? -1 : b.total == a.total ? 0 : 1
       );
 
-      int count = 0;
+
+      int count = 0;      String s = "abs";
+
       for (int i = 0; i < points.length; i++) {
         int dist = points[i][0] * points[i][0] + points[i][1]*points[i][1];
         if (count < k) {
