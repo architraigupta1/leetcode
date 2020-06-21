@@ -3,7 +3,10 @@ package com.archit.coding.practice.tree;
 import com.archit.coding.utils.BinaryTree;
 import com.archit.coding.utils.TreeNode;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
@@ -17,6 +20,8 @@ public class ReverseLevelOrder {
   private static void printReverseLevelOrder(TreeNode<Integer> root) {
     Queue<TreeNode> queue = new LinkedList<>();
     Stack<TreeNode> stack = new Stack<>();
+    List<Integer> nodes = new ArrayList();
+    Collections.sort(nodes);
     queue.add(root);
     while (!queue.isEmpty()) {
       int levelSize = queue.size();

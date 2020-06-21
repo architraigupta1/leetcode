@@ -9,7 +9,9 @@ import com.archit.coding.utils.ArrayUtil;
  */
 public class PermutatuionsOfString {
   public static void main(String[] args) {
-    String str = "abc";
+    int[] a = {1,2,3};
+
+    String str = "123";
     char[] original = str.toCharArray();
     char[] permutation = new char[str.length()];
     boolean[] usedChars = new boolean[str.length()];
