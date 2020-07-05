@@ -1,6 +1,6 @@
 package com.archit.coding.practice.strings;
 
-public class RabinKarpStringMatchingAlgo {
+public class RabinKarpPatternMatchingAlgo {
   public static void main(String[] args) {
     String pattern = "abe";
     String str = "abedabc";
