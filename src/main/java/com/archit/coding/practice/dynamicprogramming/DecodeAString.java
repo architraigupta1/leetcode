@@ -6,6 +6,9 @@ public class DecodeAString {
     int n = digits.length;
     System.out.println("Count is " +
         countDecodingDP(digits, n));
+
+    Integer[] memo = new Integer[n];
+    System.out.println("recursive count is " + recursiveCount(digits, n, 0, memo));
   }
 
   private static int countDecodingDP(char[] a, int n) {
@@ -38,5 +41,27 @@ public class DecodeAString {
     }
 
     return dp[n];
+  }
+
+  public static int recursiveCount(char[] a, int n, int index, Integer[] memo) {
+    if (index == n) {
+      return 1;
+    }
+
+    if (memo[index] != null) {
+      return memo[index];
+    }
+   int res = 0;
+    if (a[index] != '0') {
+      res += recursiveCount(a, n, index + 1, memo);
+    }
+
+    if (index + 1 < n && (a[index] == '1' || a[index] == '2' && a[index+1] < '7')) {
+      res += recursiveCount(a, n, index + 2, memo);
+    }
+
+    memo[index] = res;
+    return res;
+
   }
 }

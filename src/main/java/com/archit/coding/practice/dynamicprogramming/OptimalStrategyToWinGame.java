@@ -1,8 +1,5 @@
 package com.archit.coding.practice.dynamicprogramming;
 
-
-
-
 public class OptimalStrategyToWinGame {
   public static void main(String[] args) {
     int a[] = { 8, 15, 3, 7 };
@@ -36,7 +33,7 @@ public class OptimalStrategyToWinGame {
 
     //we pick in groups starting from 2 to n
     for (int l = 2; l <= n; l++) {
-      for (int i = 0; i + l <= n; i++) {
+      for (int i = 0; i < n - l + 1; i++) {
         int j = i + l - 1;
         if (a[i] + dp[i+1][j].second > a[j] + dp[i][j-1].second) {
           dp[i][j].first = a[i] + dp[i+1][j].second;
@@ -54,9 +51,9 @@ public class OptimalStrategyToWinGame {
   }
 
   static class Pot {
-    int first;
-    int second;
-    int pick;
+    int first; //value that first player gets
+    int second; //value that second player gets
+    int pick; //item that is picked
 
     public Pot() {
 

@@ -5,9 +5,9 @@ import java.util.HashSet;
 
 public class WordBreak {
   public static void main(String[] args) {
-    String s = "a";
+    String s = "catanddog";
     HashSet<String> dictionary = new HashSet<>(Arrays.asList(
-        "a"));
+        "cat", "cats", "sand", "dog", "and"));
 
     System.out.println(canBreakWords(s, dictionary));
   }
@@ -23,7 +23,7 @@ public class WordBreak {
     }
 
     for (int l = 2; l <= n; l++) {
-      for (int i = 0; i <= n - l; i++) {
+      for (int i = 0; i < n - l + 1; i++) {
         int j = i + l - 1;
         if (dictionary.contains(s.substring(i, j + 1))) {
           dp[i][j] = true;

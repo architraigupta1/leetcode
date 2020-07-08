@@ -18,6 +18,7 @@ public class AccountsMerge_721 {
         {"Mary", "mary@mail.com"}
     };
 
+
     Solution s = new Solution();
   }
 
