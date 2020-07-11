@@ -1,13 +1,14 @@
 package com.archit.coding.practice.graph;
 
 import com.archit.coding.utils.Graph;
+
 import java.util.Iterator;
 import java.util.LinkedList;
 import java.util.Queue;
 
 public class AlienDictionary {
   public static void main(String[] args) {
-    String[] words = {"baa", "abcd", "abca", "cab", "cad"};
+    String[] words = {"z", "z"};
     int n = words.length;
     int k = 4;
     Graph graph = new Graph(k);
