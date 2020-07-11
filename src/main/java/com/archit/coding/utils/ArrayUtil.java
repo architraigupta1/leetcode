@@ -51,4 +51,10 @@ public class ArrayUtil {
     }
     System.out.println();
   }
+
+  public static void printArray(String [] str) {
+    for (int i = 0; i < str.length; i++) {
+      System.out.println(str[i]);
+    }
+  }
 }
