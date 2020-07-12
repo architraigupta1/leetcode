@@ -41,15 +41,6 @@ public class LongestPalindromicSubstring {
       }
     }
 
-    int i = start;
-    int j = i + length;
-    StringBuilder sb = new StringBuilder();
-    while (i < j) {
-      sb.append(s.charAt(i));
-      i++;
-    }
-
-
-    return sb.toString();
+    return s.substring(start, start + length);
   }
 }
