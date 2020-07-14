@@ -1,9 +1,12 @@
-package com.archit.coding.leetcode;
+package com.archit.coding.practice.dynamicprogramming;
 
-public class RegularExpressionMatching_10 {
+public class RegexMatching {
   public static void main(String[] args) {
+    String a = "";
+    String p = "";
+
     Solution s = new Solution();
-    System.out.println(s.isMatch("ab", ".*c"));
+    System.out.println(s.isMatch("mississippi", "mis*is*p*."));
   }
 
   static class Solution {
@@ -61,47 +64,5 @@ public class RegularExpressionMatching_10 {
 
     }
 
-  }
-
-  //NOT WORKING
-  public boolean check(char[] a, char[] p, int i, int j) {
-    int length = a.length;
-    int plen = p.length;
-
-    if(i == a.length && j == p.length) {
-      return true;
-    }
-
-    char cur = i < a.length ? a[i] : ' ';
-    char pcur = j < p.length ? p[j] : ' ';
-    char next = j + 1 < plen ? p[j+1] : ' ';
-    if (pcur == '.') {
-      if (next == '*') {
-        return check(a, p, i, j+2)
-            || check(a, p, i+1, j)
-            || check(a, p, i+1, j+2);
-      } else {
-        return check(a, p, i+1, j+1);
-      }
-    } else if (Character.isLetter(pcur)) {
-      if (next == '*') {
-        if (cur == pcur) {
-          return check(a, p, i+1, j)
-              || check(a, p, i, j+2)
-              || check(a, p, i+1, j+2);
-        } else {
-          return check(a, p, i, j+2);
-        }
-
-      } else {
-        if (cur == pcur) {
-          return check(a, p, i+1, j+1);
-        } else {
-          return false;
-        }
-      }
-    }
-
-    return false;
   }
 }
