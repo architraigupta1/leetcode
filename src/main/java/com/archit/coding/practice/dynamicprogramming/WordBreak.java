@@ -16,12 +16,14 @@ public class WordBreak {
     int n = s.length();
     boolean[][] dp = new boolean[n][n];
 
+    //check if one letter word exist in dictionary.
     for (int i = 0; i < n; i++) {
       if (dictionary.contains(s.substring(i,i+1))) {
         dp[i][i] = true;
       }
     }
 
+    //check for all length words 2 -> n
     for (int l = 2; l <= n; l++) {
       for (int i = 0; i < n - l + 1; i++) {
         int j = i + l - 1;
