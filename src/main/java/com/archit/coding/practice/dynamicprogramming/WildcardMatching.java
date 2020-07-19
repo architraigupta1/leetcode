@@ -2,8 +2,8 @@ package com.archit.coding.practice.dynamicprogramming;
 
 public class WildcardMatching {
   public static void main(String[] args) {
-    String a = "xaylmz";
-    String pat = "x?y*z";
+    String a = "aa";
+    String pat = "a";
     boolean[][] dp = new boolean[a.length() + 1][pat.length() + 1];
 
     // empty string and pattern are a match
