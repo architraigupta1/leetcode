@@ -38,7 +38,7 @@ public class MedianTwoSortedArrays {
               + Math.min(a[endA], b[endB]))
           / 2;
     }
-        /* get the median of
+    /* get the median of
     the first array */
     int m1 = median(a, startA, endA);
 
