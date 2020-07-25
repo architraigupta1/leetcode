@@ -3,7 +3,6 @@ package com.archit.coding.practice.array;
 import com.archit.coding.utils.Pair;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 
 public class MinSwapsToSortArray {
   public static void main(String[] args) {
@@ -33,12 +32,11 @@ public class MinSwapsToSortArray {
 
     //create a visited array to mark if the element has been moved to it's final position
     boolean[] visited = new boolean[a.length];
-    Arrays.fill(visited, false);
 
     int swaps = 0;
 
     //Go over each element to calculate the number of swaps
-    for (int i =0; i < a.length; i++) {
+    for (int i = 0; i < a.length; i++) {
       // if the element is already at final position or moved to final position then continue
       if (visited[i] || ap.get(i).getValue() == i) {
         continue;
