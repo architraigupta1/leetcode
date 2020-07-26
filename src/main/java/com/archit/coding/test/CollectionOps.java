@@ -15,5 +15,7 @@ public class CollectionOps {
 
     Queue<int[]> q = new LinkedList<>();
     q.add(new int[] {1,2});
+    LinkedList<Integer> linkedList = new LinkedList<>();
+
   }
 }
