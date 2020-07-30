@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.PriorityQueue;
 import java.util.Queue;
 
 public class CollectionOps {
@@ -16,6 +17,8 @@ public class CollectionOps {
     Queue<int[]> q = new LinkedList<>();
     q.add(new int[] {1,2});
     LinkedList<Integer> linkedList = new LinkedList<>();
+
+    PriorityQueue<Integer> pq = new PriorityQueue<>();
 
   }
 }

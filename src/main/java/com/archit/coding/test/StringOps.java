@@ -9,5 +9,12 @@ public class StringOps {
     sb.setLength(2);
     String a = "";
     System.out.println(a.length());
+
+    String path = "/";
+    String[] paths = path.split("/");
+
+    System.out.println(paths.length);
+
+
   }
 }
