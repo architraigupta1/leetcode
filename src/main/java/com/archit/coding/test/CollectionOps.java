@@ -11,6 +11,7 @@ public class CollectionOps {
   public static void main(String[] args) {
     int[] a = {1,2,3};
     HashSet<Integer> set = new HashSet<>();
+    
     List<Integer> list = new ArrayList<Integer>();
     set.addAll(list);
 
