@@ -5,6 +5,7 @@ public class ReverseIndividualWords {
     String str = "Geeks for Geeks";
     int start = 0;
     int end = 0;
+    StringBuilder sb = new StringBuilder(str);
     for (int i = 0; i < str.length(); i++) {
       if (str.charAt(i) == ' ' || i == str.length() - 1) {
         if (i == str.length() -1) {
@@ -12,15 +13,14 @@ public class ReverseIndividualWords {
         } else {
           end = i - 1;
         }
-        str = reverseWord(str, start, end);
+        reverseWord(sb, start, end);
         start = i + 1;
       }
     }
-    System.out.print(str);
+    System.out.print(sb.toString());
   }
 
-  private static String reverseWord(String str, int start, int end) {
-    StringBuilder sb = new StringBuilder(str);
+  private static void reverseWord(StringBuilder sb, int start, int end) {
     while (start < end) {
       char temp = sb.charAt(start);
       sb.setCharAt(start, sb.charAt(end));
@@ -28,6 +28,5 @@ public class ReverseIndividualWords {
       start++;
       end--;
     }
-    return sb.toString();
   }
 }

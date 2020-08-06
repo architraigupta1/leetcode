@@ -31,8 +31,10 @@ public class LongestCommonSubsequence {
     for (int i = 1; i <=m; i++) {
       for (int j = 1; j <=n ;j++) {
         if (x[i-1] == y[j-1]) {
+          //if chars are same then 1 + whatever is the max length without these chars
           dp[i][j] = 1 + dp[i-1][j-1];
         } else {
+          //whatever is the max length with a minus current char or b minus current char
           dp[i][j] = Math.max(dp[i][j-1], dp[i-1][j]);
         }
       }

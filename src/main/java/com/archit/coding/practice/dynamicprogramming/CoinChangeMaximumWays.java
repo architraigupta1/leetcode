@@ -11,7 +11,7 @@ public class CoinChangeMaximumWays {
     int n = a.length;
     int [][] dp = new int[n][change + 1];
 
-    //when we have to make 0 change, there is only 1 way to not pick any coint
+    //when we have to make 0 change, there is only 1 way to not pick any coin
     for (int i = 0; i < n; i++) {
       dp[i][0] = 1;
     }
@@ -27,9 +27,15 @@ public class CoinChangeMaximumWays {
 
     for (int i = 1; i < n; i++) {
       for (int j = 1; j <= change; j++) {
+        // if the total to make is less than coin's value,
+        // then this coin cannot be used to make this total.
+        // The number of ways will be equal to the number of ways to
+        // make this total without this coin.
         if (j < a[i]) {
           dp[i][j] = dp[i-1][j];
         } else {
+          //the number of ways this total can be made without this coin +
+          // number of ways the remaining amount can be made if we include this coin.
           dp[i][j] = dp[i-1][j] + dp[i][j - a[i]];
         }
       }

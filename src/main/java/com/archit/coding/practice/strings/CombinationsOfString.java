@@ -1,26 +1,23 @@
 package com.archit.coding.practice.strings;
 
-import com.archit.coding.utils.ArrayUtil;
+
 
 public class CombinationsOfString {
   public static void main(String[] args) {
-    String str = "abc";
+    String str = "abc"; //    a, b, c, ab, ac, bc, abc
     char[] original = str.toCharArray();
-    String combination = "";
-    printCombinations(original, combination,0, 0, str.length());
+    StringBuilder combination = new StringBuilder();
+    printCombinations(original, combination, 0, str.length());
 
   }
 
-  private static void printCombinations(char[] original, String combination, int start, int index, int length) {
-    if (index == length) {
-      return;
-    }
-    for (int i = start; i < length; i++) {
-      String localOriginal = combination;
-      combination += original[i];
-      System.out.println(combination);
-      printCombinations(original, combination, i + 1, index + 1, length);
-      combination = localOriginal;
+  private static void printCombinations(char[] original, StringBuilder combination, int index, int length) {
+
+    for (int i = index; i < length; i++) {
+      StringBuilder sb = new StringBuilder(combination);
+      sb.append(original[i]);
+      System.out.println(sb.toString());
+      printCombinations(original, sb, i + 1, length);
     }
 
   }

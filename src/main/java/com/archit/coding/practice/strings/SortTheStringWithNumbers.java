@@ -18,12 +18,10 @@ public class SortTheStringWithNumbers {
     }
 
     char result [] = sb.toString().toCharArray();
+
     Arrays.sort(result);
-    sb = new StringBuilder();
-    for (int i = 0; i < result.length; i++) {
-      sb.append(result[i]);
-    }
-    sb.append(sum);
-    System.out.print(sb.toString());
+    String str = new String(result);
+    str += sum;
+    System.out.print(str);
   }
 }

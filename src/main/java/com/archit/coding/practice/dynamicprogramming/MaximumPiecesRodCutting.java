@@ -2,7 +2,7 @@ package com.archit.coding.practice.dynamicprogramming;
 
 public class MaximumPiecesRodCutting {
   public static void main(String[] args) {
-    int l = 11, p = 2, q = 3, r = 5;
+    int l = 15, p = 2, q = 3, r = 5;
     System.out.println(findMaximum(l, p, q, r));
   }
 

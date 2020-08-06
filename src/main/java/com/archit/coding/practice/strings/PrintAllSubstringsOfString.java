@@ -5,18 +5,21 @@ public class PrintAllSubstringsOfString {
     String input = "abcd";
     input = "Geeky";
     char[] c = input.toCharArray();
+
+    //Fix every char to first index and recurse to get all
+    // substrings with that index as first char
     for (int i = 0; i < c.length; i++) {
       StringBuilder sb = new StringBuilder();
       printSubstr(c, sb, i);
     }
   }
 
-  private static void printSubstr(char[] c, StringBuilder sb, int i) {
-    if (i == c.length) {
+  private static void printSubstr(char[] c, StringBuilder sb, int index) {
+    if (index == c.length) {
       return;
     }
-    sb.append(c[i]);
+    sb.append(c[index]);
     System.out.println(sb.toString());
-    printSubstr(c, sb, i+1);
+    printSubstr(c, sb, index+1);
   }
 }

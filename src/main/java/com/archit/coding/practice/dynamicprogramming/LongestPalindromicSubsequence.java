@@ -6,6 +6,8 @@ public class LongestPalindromicSubsequence {
     int n = s.length();
     int[][] dp = new int[n][n];
 
+    //if the string is one one length,
+    // then the max length possible is 1
     for (int i = 0; i < n; i++) {
       dp[i][i] = 1;
     }

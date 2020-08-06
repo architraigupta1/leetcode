@@ -1,15 +1,11 @@
 package com.archit.coding.practice.dynamicprogramming;
 
-import com.archit.coding.utils.ArrayUtil;
-
-import java.util.Arrays;
-
 public class CoinChangeMinimumNumberOfCoins {
   public static void main(String[] args) {
     int coins[] = {9, 6, 5, 1};
 //    Arrays.sort(coins);
     int m = coins.length;
-    int change = 11;
+    int change = 7;
     System.out.println ( "Minimum coins required is "
         + minCoins(coins, m, change));
   }

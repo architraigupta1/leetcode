@@ -1,7 +1,5 @@
 package com.archit.coding.practice.graph;
 
-import com.archit.coding.utils.ArrayUtil;
-import com.archit.coding.utils.Graph;
 import com.archit.coding.utils.GraphEdge;
 import com.archit.coding.utils.GraphNode;
 
@@ -70,7 +68,7 @@ public class MinimumWeightCycleInUndirectedGraph {
     this.settled.clear();
     this.dist[src] = 0;
     PriorityQueue<GraphNode> pq = new PriorityQueue<>((a, b) -> {
-      if (a.cost <= b.cost) {
+      if (a.cost < b.cost) {
         return -1;
       } else if (a.cost > b.cost) {
         return 1;

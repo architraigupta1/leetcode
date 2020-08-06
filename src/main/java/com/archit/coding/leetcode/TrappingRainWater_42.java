@@ -105,8 +105,9 @@ public class TrappingRainWater_42 {
       // Take two pointers one in left and one in right.
       // the min(leftMax, rightMax) will decide how much water the current bar can hold.
       // if (a[left] < a[right]) means right is larger, increment left
-      // if (a[right] >= a[left]) means left is larger, decrement right
-      // now in left, if a[left] > leftMax then it cannot hold any water but will act as a wall for other lefts, so update leftMax. Otherwise, update sum with leftMax as wall - current height
+      // if (a[right] <= a[left]) means left is larger, decrement right
+      // now in left, if a[left] > leftMax then it cannot hold any water but will act as a wall for other lefts, so update leftMax.
+      // Otherwise, update sum with leftMax as wall - current height
       while(left < right) {
         if (height[left] < height[right]) {
           if(height[left] >= leftMax) {

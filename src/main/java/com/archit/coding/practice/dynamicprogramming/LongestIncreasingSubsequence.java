@@ -16,21 +16,17 @@ public class LongestIncreasingSubsequence {
       dp[i] = 1;
     }
 
-    int i = 1;
-    while (i < n) {
-      int j = 0;
-      while (j < i) {
+    for (int i = 1; i < n; i++) {
+      for (int j = 0; j < i; j++) {
         if (a[j] < a[i]) {
           dp[i] = Math.max(dp[i], 1 + dp[j]);
         }
-        j++;
       }
-      i++;
     }
 
     //find the max length in dp
     int max = dp[0];
-    for (i = 1; i < n; i++) {
+    for (int i = 1; i < n; i++) {
       max = Math.max(max, dp[i]);
     }
 
