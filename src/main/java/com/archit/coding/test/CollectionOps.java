@@ -28,6 +28,8 @@ public class CollectionOps {
 
     List<List<Integer>> r = new ArrayList<>();
     r.add(Arrays.asList());
+    Integer[] arr = {1,2};
+    r.add(Arrays.asList(arr));
 
   }
 }
