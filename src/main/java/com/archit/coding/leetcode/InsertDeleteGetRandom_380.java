@@ -41,18 +41,20 @@ public class InsertDeleteGetRandom_380 {
 
     /** Removes a value from the set. Returns true if the set contained the specified element. */
     public boolean remove(int val) {
-      if(!map.containsKey(val)) {
+      if (!this.map.containsKey(val)) {
         return false;
       }
-      int lastIndex = list.size() - 1;
-      int lastElement = list.get(lastIndex);
-      int keyIndex = map.get(val);
-      list.set(keyIndex, lastElement);
-      map.put(lastElement, keyIndex);
 
-      list.remove(lastIndex);
+      int index = map.get(val);
+      //swap the element to delete with the last element
+      int lastVal = list.get(list.size() - 1);
+      list.set(index, lastVal);
+      //delete the last element
+      list.remove(list.size() - 1);
+      //remove the deleted element
       map.remove(val);
-
+      //update the index for lastVal
+      map.put(lastVal, index);
       return true;
     }
 

@@ -10,9 +10,18 @@ public class ZigZagTraversal {
     TreeNode root = new TreeNode(1);
     TreeNode left = new TreeNode(2);
     TreeNode right = new TreeNode(3);
+    TreeNode leftleft = new TreeNode(4);
+    TreeNode leftright = new TreeNode(5);
+    TreeNode rightleft = new TreeNode(6);
+    TreeNode rightright = new TreeNode(7);
     root.left = left;
     root.right =right;
-    s.zigzagLevelOrder(root);
+    root.left.left = leftleft;
+    root.left.right = leftright;
+    root.right.left = rightleft;
+    root.right.right = rightright;
+    List<List<Integer>> result = s.zigzagLevelOrder(root);
+    System.out.println();
   }
 
    // Definition for a binary tree node.
@@ -20,13 +29,7 @@ public class ZigZagTraversal {
         int val;
         TreeNode left;
         TreeNode right;
-        TreeNode() {}
         TreeNode(int val) { this.val = val; }
-        TreeNode(int val, TreeNode left, TreeNode right) {
-            this.val = val;
-            this.left = left;
-            this.right = right;
-        }
    }
 
   static class Solution {
@@ -47,13 +50,26 @@ public class ZigZagTraversal {
       while(!cur.isEmpty()) {
         TreeNode node = cur.pop();
 
-        //end of current level
-        if (cur.isEmpty()) {
-          //mark the end of next level
-          if (!next.isEmpty()) {
-            next.push(null);
-          }
+        //Add the node to level output
+        level.add(node.val);
 
+        if (leftToRight) {
+          if (node.left != null) {
+            next.add(node.left);
+          }
+          if (node.right != null) {
+            next.add(node.right);
+          }
+        } else {
+          if (node.right != null) {
+            next.add(node.right);
+          }
+          if (node.left != null) {
+            next.add(node.left);
+          }
+        }
+
+        if (cur.isEmpty()) {
           //add the nodes of current level to result and reset level
           result.add(level);
           level = new ArrayList<>();
@@ -65,26 +81,8 @@ public class ZigZagTraversal {
           Stack<TreeNode> temp = cur;
           cur = next;
           next = temp;
-        } else {
-          //Add the node to level output
-          level.add(node.val);
-
-          if (leftToRight) {
-            if (node.left != null) {
-              next.add(node.left);
-            }
-            if (node.right != null) {
-              next.add(node.right);
-            }
-          } else {
-            if (node.right != null) {
-              next.add(node.right);
-            }
-            if (node.left != null) {
-              next.add(node.left);
-            }
-          }
         }
+
       }
 
       return result;
