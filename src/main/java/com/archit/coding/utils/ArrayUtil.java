@@ -10,6 +10,8 @@ public class ArrayUtil {
 
   public static int[] getRandomArray(int size, int bound, boolean startFromZero) {
     Random random = new Random();
+
+
     int[] a = new int[size];
 
     int minRandom = 1;

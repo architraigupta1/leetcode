@@ -23,8 +23,12 @@ public class CollectionOps {
     LinkedList<Integer> linkedList = new LinkedList<>();
 
     PriorityQueue<Integer> pq = new PriorityQueue<>();
-    List<Integer> result = new ArrayList<>();
-    result.toArray(new Integer[result.size()]);
+    List<Integer[]> result = new ArrayList<>();
+    int a1 = 1;
+    int b1 = 2;
+    if (a1>=b1) {
+      
+    }
 
     List<List<Integer>> r = new ArrayList<>();
     r.add(Arrays.asList());
