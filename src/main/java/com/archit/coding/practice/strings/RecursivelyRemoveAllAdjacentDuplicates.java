@@ -10,16 +10,17 @@ public class RecursivelyRemoveAllAdjacentDuplicates {
     while (i < sb.length() - 1) {
       if (sb.charAt(i) == sb.charAt(i+1)) {
         int j = i;
-        while (j < sb.length() - 1 && sb.charAt(j) == sb.charAt(j+1)) {
+        while(j < sb.length() - 1 && sb.charAt(j) == sb.charAt(j+1)) {
           j++;
         }
-        sb.delete(i, j+1);
-        if (i!= 0) {
+        sb = sb.delete(i, j+1);
+        if (i != 0) {
           i--;
         }
       } else {
         i++;
       }
+
     }
     System.out.println(sb.toString());
   }

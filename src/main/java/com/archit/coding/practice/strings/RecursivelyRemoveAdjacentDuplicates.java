@@ -4,8 +4,8 @@ public class RecursivelyRemoveAdjacentDuplicates {
   public static void main(String[] args) {
     String str = "geeksforgeekss";
 //    str = "archit";
-    str = "caacbbbaacdddd";
-//    str = "acaaabbbacdddd";
+//    str = "caacbbbaacdddd";
+    str = "acaaabbbacdddd";
     StringBuilder sb = new StringBuilder(str);
     System.out.println(sb.toString());
     int j = 0;
