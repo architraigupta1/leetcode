@@ -16,6 +16,7 @@ public class SlidingWindowMinMaxSum {
     int sum = 0;
 
     for (int i = 0; i < k; i++) {
+      //keep only the smallest elements in the window
       while (!minq.isEmpty() && a[i] <= a[minq.peekLast()]) {
         minq.removeLast();
       }

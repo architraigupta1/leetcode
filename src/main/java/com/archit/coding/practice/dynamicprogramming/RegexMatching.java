@@ -43,6 +43,8 @@ public class RegexMatching {
 
       for(int i = 1; i <= slen; i++) {
         for (int j = 1; j <= plen; j++) {
+          //if the pattern and string match OR pattern is '.' then copy the result
+          //as if these two chars doesn't exist.
           if (s.charAt(i-1) == p.charAt(j-1)
               || p.charAt(j-1) == '.') {
             dp[i][j] = dp[i-1][j-1];

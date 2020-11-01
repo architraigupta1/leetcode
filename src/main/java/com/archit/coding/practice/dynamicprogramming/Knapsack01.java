@@ -29,6 +29,8 @@ public class Knapsack01 {
 
     for (int i = 1; i < n; i++) {
       for (int j = 1; j <=weight; j++) {
+        //if the weight to form is less than the weight of this stone, then the value formed
+        //is same as without this stone
         if (j < wt[i]) {
           dp[i][j] = dp[i-1][j];
         }  else {

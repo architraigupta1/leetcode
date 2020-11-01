@@ -26,6 +26,7 @@ public class KnightsTour {
     if (move == boardSize*boardSize) {
       return true;
     }
+
     int[] rowNums = {-1, -2, -2, -1, 1, 2, 2, 1};
     int[] colNums = {-2, -1, 1, 2, 2, 1, -1, -2};
 

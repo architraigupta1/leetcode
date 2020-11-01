@@ -94,13 +94,12 @@ public class Graph {
     ArrayList<Integer> topologicalOrder = new ArrayList();
 
     for (int i = 0; i < this.vertices; i++) {
-      Iterator<Integer> it = this.adj[i].iterator();
-      while(it.hasNext()) {
-        indegree[it.next()]++;
+      for (Integer integer : this.adj[i]) {
+        indegree[integer]++;
       }
     }
 
-    Queue<Integer> queue = new LinkedList();
+    Queue<Integer> queue = new LinkedList<>();
     for (int i = 0; i < this.vertices; i++) {
       if (indegree[i] == 0) {
         queue.add(i);

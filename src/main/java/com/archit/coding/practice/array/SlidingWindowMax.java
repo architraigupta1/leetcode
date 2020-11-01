@@ -12,11 +12,14 @@ public class SlidingWindowMax {
 
   private static void printMax(int[] a, int length, int k) {
     Deque<Integer> dq = new LinkedList<>();
-
+    //process first k elements to get the first window
     for (int i = 0; i < k; i++) {
+      //DQ holds only relevant elements. When pushing ith element, remove all the
+      //smaller elements than ith from the queue
       while (!dq.isEmpty() && a[i] >= a[dq.peekLast()]) {
         dq.removeLast();
       }
+      //add the ith index to the end of DQ
       dq.addLast(i);
     }
 

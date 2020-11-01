@@ -1,6 +1,6 @@
 package com.archit.coding.practice.backtracking;
 
-// Complexity 2^(n^2)
+// Complexity 2^(n^2) OR 2^(rows*cols)
 public class RatInAMaze {
   public static void main(String[] args) {
     int[][] maze = {
