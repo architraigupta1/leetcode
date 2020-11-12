@@ -79,7 +79,7 @@ public class LetterCombinations {
         map.put('8', "tuv");
         map.put('9', "wxyz");
 
-        List<String> result = new ArrayList();
+        ListDemo<String> result = new ArrayList();
         if (digits == null || digits.isEmpty()) {
             return result;
         }
@@ -91,7 +91,7 @@ public class LetterCombinations {
         return result;
     }
 
-    public void findCombinations(String digits, char[] a, Map<Character, String> map, int index, int n, List<String> result) {
+    public void findCombinations(String digits, char[] a, Map<Character, String> map, int index, int n, ListDemo<String> result) {
         if (index == n) {
             result.add(new String(a));
             return;

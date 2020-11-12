@@ -109,7 +109,7 @@ Create a class Node (int key, int value, int freq, int timer)
 
 Map<Key, Node>
 Min PQ<PqNode> sort asc by (freq, timer)
-PqNode <freq, List<Node>>
+PqNode <freq, ListDemo<Node>>
 
 get()
 check in map, if exists

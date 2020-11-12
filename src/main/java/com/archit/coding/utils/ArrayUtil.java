@@ -2,7 +2,7 @@ package com.archit.coding.utils;
 
 import java.util.Random;
 
-public class ArrayUtil {
+public class  ArrayUtil {
 
   public static int[] getRandomArray(int size) {
     return getRandomArray(size, size,false);

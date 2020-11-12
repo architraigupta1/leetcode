@@ -167,7 +167,7 @@ public class AllO1DataStructure_432 {
 
 /*
 Map<String, freq>
-List<Freq, Set> -- ignore
+ListDemo<Freq, Set> -- ignore
 Map<Freq, Set>
 LinkedList<Integer> freq
 MAX

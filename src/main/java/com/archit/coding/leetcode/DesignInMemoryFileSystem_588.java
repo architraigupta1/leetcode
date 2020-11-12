@@ -1,7 +1,7 @@
 //package com.archit.coding.leetcode;
 //
 //import java.util.ArrayList;
-//import java.util.List;
+//import java.util.ListDemo;
 //import java.util.TreeMap;
 //
 //public class DesignInMemoryFileSystem_588 {
@@ -19,10 +19,10 @@
 //      this.system.put("/", root);
 //    }
 //
-//    public List<String> ls(String path) {
+//    public ListDemo<String> ls(String path) {
 //      String[] levels = path.split("/");
 //      int n = levels.length;
-//      List<String> result = new ArrayList<>();
+//      ListDemo<String> result = new ArrayList<>();
 //      Node root = system.get("/");
 //      for (int i = 1; i < n; i++) {
 //        root = root.dirs.get(levels[i]);
@@ -123,7 +123,7 @@
 ///**
 // * Your FileSystem object will be instantiated and called as such:
 // * FileSystem obj = new FileSystem();
-// * List<String> param_1 = obj.ls(path);
+// * ListDemo<String> param_1 = obj.ls(path);
 // * obj.mkdir(path);
 // * obj.addContentToFile(filePath,content);
 // * String param_4 = obj.readContentFromFile(filePath);

@@ -14,6 +14,8 @@ public class Test{
     Map<String, List<Integer>> map = new HashMap<>();
     List<List<Integer>> result = new ArrayList<>();
     result.addAll(map.values());
+    int[][] rowData = new int[9][10];
+    System.out.println(rowData[0][7]);
   }
 
 }
