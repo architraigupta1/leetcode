@@ -13,8 +13,9 @@ public class CollectionOps {
     int[] a = {1,2,3};
     HashSet<Integer> set = new HashSet<>();
     
-    List<Integer> list = new ArrayList<Integer>();
+    List<Integer> list = new ArrayList<>();
     list.toArray(new Integer[list.size()]);
+    list.toArray(new Integer[0]);
 
     set.addAll(list);
 
