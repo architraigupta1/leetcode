@@ -12,6 +12,29 @@ public class Knapsack01 {
 
   private static int knapSack(int weight, int[] wt, int[] val, int n) {
     int[][]dp = new int[n][weight + 1];
+    int[] first = new int[weight + 1];
+    int[] second = new int[weight + 1];
+
+    for (int j = 0; j <= weight; j++) {
+      if (j < wt[0]) {
+        first[j] = 0;
+      } else {
+        first[j] = val[0];
+      }
+    }
+
+    for (int i = 1; i < n; i++) {
+      for (int j = 1; j <= weight; j++) {
+        if (j < wt[i]) {
+          second[j] = first[j];
+        } else {
+          second[j] = Math.max(first[j], val[i] + second[j - wt[i]]);
+        }
+      }
+      first = second;
+    }
+
+    System.out.println(first[weight]);
 
     //if required weight is 0, then max value is 0
     for (int i = 0; i < n; i++) {

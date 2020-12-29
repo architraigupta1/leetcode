@@ -1,5 +1,6 @@
 package com.archit.coding.utils;
 
+import java.util.List;
 import java.util.Random;
 
 public class  ArrayUtil {
@@ -57,6 +58,12 @@ public class  ArrayUtil {
   public static void printArray(String [] str) {
     for (int i = 0; i < str.length; i++) {
       System.out.println(str[i]);
+    }
+  }
+
+  public static void printIntegerList(List<Integer> list) {
+    for (int i = 0; i < list.size(); i++) {
+      System.out.println(list.get(i));
     }
   }
 
