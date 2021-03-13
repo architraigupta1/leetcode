@@ -17,6 +17,7 @@ public class CollectionOps {
     list.toArray(new Integer[list.size()]);
     list.toArray(new Integer[0]);
 
+
     set.addAll(list);
 
     Queue<int[]> q = new LinkedList<>();
@@ -34,7 +35,9 @@ public class CollectionOps {
     List<List<Integer>> r = new ArrayList<>();
     r.add(Arrays.asList());
     Integer[] arr = {1,2};
+    int[] ax = {1,2};
     r.add(Arrays.asList(arr));
 
   }
+
 }
